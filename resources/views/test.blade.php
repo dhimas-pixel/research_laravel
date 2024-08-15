@@ -127,13 +127,12 @@
                         closeCamera();
                     },
                     error: function (data) {
-                        console.log('Error:', data.responseText);
+                        Swal.close();
                         Swal.fire({
                             icon: 'error',
                             title: 'Oops...',
-                            text: 'Something went wrong!',
+                            text: data.responseJSON.error,
                         })
-                        Swal.close();
                         closeCamera();
                     }
                 });
